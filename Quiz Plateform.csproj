@@ -72,6 +72,12 @@
     <Compile Include="RegisterForm\registerForm.Designer.cs">
       <DependentUpon>registerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResultForm\Result.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultForm\Result.Designer.cs">
+      <DependentUpon>Result.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentDashboard\stuDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterForm\registerForm.resx">
       <DependentUpon>registerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultForm\Result.resx">
+      <DependentUpon>Result.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentDashboard\stuDashboard.resx">
       <DependentUpon>stuDashboard.cs</DependentUpon>

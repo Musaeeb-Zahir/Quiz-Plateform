@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Quiz_Plateform.LoginForm;
 using Quiz_Plateform.RegisterForm;
 
+
 namespace Quiz_Plateform
 {
     public partial class Form1: Form

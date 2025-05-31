@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Quiz_Plateform.StudentDashboard;
+using Oracle.ManagedDataAccess.Client;
 namespace Quiz_Plateform.LoginForm
 {
-    public partial class loginForm: Form
+    public partial class loginForm : Form
     {
         public loginForm()
         {
@@ -27,6 +28,56 @@ namespace Quiz_Plateform.LoginForm
             Form1 form1 = new Form1();
             form1.Show();
             this.Hide();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            String email = txtEmail.Text.Trim();
+            String password = txtPassword.Text.Trim();
+            if (email == " " || password == " ")
+            {
+                MessageBox.Show("All field are requied!");
+            }
+            else
+            {
+                String connectionString = "User Id=system;Password=db123;Data Source=localhost:1521/XE;";
+                try
+                {
+                    using (OracleConnection conn = new OracleConnection(connectionString))
+                    {
+                        conn.Open();
+                        String query = "select count(*) from STUDENTS  where email=:email and password=:password";
+                        using (OracleCommand cmd = new OracleCommand(query, conn))
+                        {
+                            cmd.Parameters.Add(new OracleParameter("email", email));
+                            cmd.Parameters.Add(new OracleParameter("password", password));
+                            int count = Convert.ToInt32(cmd.ExecuteScalar());
+                            Console.WriteLine("count: " + count);
+                            if (count > 0)
+                            {
+                                MessageBox.Show("Login successful!");
+                                // Open dashboard form here
+                                this.Hide();
+                                stuDashboard dashboard = new stuDashboard(); // create this form
+                                dashboard.Show();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid email or password.");
+                            }
+                        }
+
+
+
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("catch ma aya ha");
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
         }
     }
 }

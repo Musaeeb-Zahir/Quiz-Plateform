@@ -1,0 +1,103 @@
+
+-- STUDENTS TABLE
+CREATE TABLE STUDENTS (
+    student_id NUMBER PRIMARY KEY,
+    name VARCHAR2(100),
+    email VARCHAR2(100) UNIQUE,
+    password VARCHAR2(100)
+);
+
+CREATE SEQUENCE student_seq START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER trg_student_id
+BEFORE INSERT ON STUDENTS
+FOR EACH ROW
+BEGIN
+    SELECT student_seq.NEXTVAL INTO :NEW.student_id FROM dual;
+END;
+/
+
+INSERT INTO STUDENTS (name, email, password) VALUES ('Ali Khan', 'ali@example.com', 'ali123');
+INSERT INTO STUDENTS (name, email, password) VALUES ('Sara Ahmed', 'sara@example.com', 'sara456');
+
+-- QUIZZES TABLE
+CREATE TABLE QUIZZES (
+    quiz_id NUMBER PRIMARY KEY,
+    quiz_title VARCHAR2(100),
+    duration_minutes NUMBER
+);
+
+CREATE SEQUENCE quiz_seq START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER trg_quiz_id
+BEFORE INSERT ON QUIZZES
+FOR EACH ROW
+BEGIN
+    SELECT quiz_seq.NEXTVAL INTO :NEW.quiz_id FROM dual;
+END;
+/
+
+INSERT INTO QUIZZES (quiz_title, duration_minutes) VALUES ('C# Basics', 10);
+INSERT INTO QUIZZES (quiz_title, duration_minutes) VALUES ('Oracle SQL', 15);
+
+-- QUESTIONS TABLE
+CREATE TABLE QUESTIONS (
+    question_id NUMBER PRIMARY KEY,
+    quiz_id NUMBER REFERENCES QUIZZES(quiz_id),
+    question_text VARCHAR2(500),
+    option_a VARCHAR2(200),
+    option_b VARCHAR2(200),
+    option_c VARCHAR2(200),
+    option_d VARCHAR2(200),
+    correct_option CHAR(1)
+);
+
+CREATE SEQUENCE question_seq START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER trg_question_id
+BEFORE INSERT ON QUESTIONS
+FOR EACH ROW
+BEGIN
+    SELECT question_seq.NEXTVAL INTO :NEW.question_id FROM dual;
+END;
+/
+
+-- C# Basics Questions
+INSERT INTO QUESTIONS (quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option)
+VALUES (1, 'What does CLR stand for in .NET?', 'Common Language Runtime', 'Common Link Runtime', 'Code Language Runtime', 'Central Language Runtime', 'A');
+
+INSERT INTO QUESTIONS (quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option)
+VALUES (1, 'Which keyword is used to define a class in C#?', 'def', 'function', 'class', 'define', 'C');
+
+-- Oracle SQL Questions
+INSERT INTO QUESTIONS (quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option)
+VALUES (2, 'Which command is used to retrieve data in SQL?', 'GET', 'FETCH', 'SELECT', 'RETRIEVE', 'C');
+
+INSERT INTO QUESTIONS (quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option)
+VALUES (2, 'What is the extension of an Oracle SQL file?', '.ora', '.sql', '.db', '.oxf', 'B');
+
+-- RESULTS TABLE
+CREATE TABLE RESULTS (
+    result_id NUMBER PRIMARY KEY,
+    student_id NUMBER REFERENCES STUDENTS(student_id),
+    quiz_id NUMBER REFERENCES QUIZZES(quiz_id),
+    score NUMBER,
+    attempt_date DATE
+);
+
+CREATE SEQUENCE result_seq START WITH 1 INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER trg_result_id
+BEFORE INSERT ON RESULTS
+FOR EACH ROW
+BEGIN
+    SELECT result_seq.NEXTVAL INTO :NEW.result_id FROM dual;
+END;
+/
+
+-- Dummy Result
+INSERT INTO RESULTS (student_id, quiz_id, score, attempt_date)
+VALUES (1, 1, 2, SYSDATE);
+
+INSERT INTO RESULTS (student_id, quiz_id, score, attempt_date)
+VALUES (2, 2, 1, SYSDATE);

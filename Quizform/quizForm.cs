@@ -58,7 +58,7 @@ namespace Quiz_Plateform.Quizform
 
         private void quizForm_Load(object sender, EventArgs e)
         {
-            lblQuestionNo.Text = "Q" + QuestionCount.ToString() + "Out of 10" ;
+            lblQuestionNo.Text = "Q" + QuestionCount.ToString() + " out of 10" ;
             String connectionString = "User Id=system;Password=db123;Data Source=localhost:1521/XE;";
             using (OracleConnection conn = new OracleConnection(connectionString))
             {
@@ -108,6 +108,7 @@ namespace Quiz_Plateform.Quizform
         private void btnNext_Click(object sender, EventArgs e)
         {
             QuestionCount++;
+            lblQuestionNo.Text = "Q" + QuestionCount.ToString() + " out of 10";
             Question currentQuestion = questions[currentQuestionIndex];
             String selectedOption = "";
             if (rbtnOption1.Checked) selectedOption = rbtnOption1.Text;

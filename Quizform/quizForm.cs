@@ -9,11 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 using System.Collections.Generic;
+using static System.Formats.Asn1.AsnWriter;
 namespace Quiz_Plateform.Quizform
 {
     public partial class quizForm : Form
     {
         private string quizCategory;
+        int QuestionCount = 1;
+        int score = 0;
+        int wrongAns = 0;
         private int currentQuestionIndex = 0;
 
         private class Question
@@ -45,15 +49,16 @@ namespace Quiz_Plateform.Quizform
             }
             else
             {
-                MessageBox.Show("Quiz completed!");
+                MessageBox.Show("Quiz completed! click result to check your result"+ "Score: "+score+" WrongAns: "+wrongAns);
                 this.Close();
-                // Aap result form open kar sakte ho yahan
+                // yahan per result form load kran ga
             }
         }
 
 
         private void quizForm_Load(object sender, EventArgs e)
         {
+            lblQuestionNo.Text = "Q" + QuestionCount.ToString() + "Out of 10" ;
             String connectionString = "User Id=system;Password=db123;Data Source=localhost:1521/XE;";
             using (OracleConnection conn = new OracleConnection(connectionString))
             {
@@ -102,6 +107,24 @@ namespace Quiz_Plateform.Quizform
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            QuestionCount++;
+            Question currentQuestion = questions[currentQuestionIndex];
+            String selectedOption = "";
+            if (rbtnOption1.Checked) selectedOption = rbtnOption1.Text;
+            else if (rbtnOption2.Checked) selectedOption = rbtnOption2.Text;
+            else if (rbtnOption3.Checked) selectedOption = rbtnOption3.Text;
+            else if (rbtnOption4.Checked) selectedOption = rbtnOption4.Text;
+            Console.WriteLine("Selected option: " + selectedOption);
+            Console.WriteLine("Correct answer: " + currentQuestion.CorrectAnswer);
+
+            if (selectedOption == currentQuestion.CorrectAnswer)
+            {
+                score++; 
+            }
+            else
+            {
+                wrongAns++; 
+            }
             currentQuestionIndex++;
             LoadQuestion();
         }

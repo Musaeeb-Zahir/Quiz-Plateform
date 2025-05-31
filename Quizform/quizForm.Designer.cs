@@ -34,7 +34,7 @@
             this.rbtnOption3 = new System.Windows.Forms.RadioButton();
             this.rbtnOption2 = new System.Windows.Forms.RadioButton();
             this.rbtnOption1 = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblQuestionNo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -108,14 +108,13 @@
             this.rbtnOption1.Text = "radioButton1";
             this.rbtnOption1.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblQuestionNo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(202, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Q1 out of 10";
+            this.lblQuestionNo.AutoSize = true;
+            this.lblQuestionNo.Location = new System.Drawing.Point(202, 55);
+            this.lblQuestionNo.Name = "lblQuestionNo";
+            this.lblQuestionNo.Size = new System.Drawing.Size(0, 13);
+            this.lblQuestionNo.TabIndex = 0;
             // 
             // label2
             // 
@@ -153,7 +152,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblQuestionNo);
             this.Controls.Add(this.label2);
             this.Name = "quizForm";
             this.Text = "Form1";
@@ -168,7 +167,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblQuestionNo;
         private System.Windows.Forms.Label lblQuestion;
         private System.Windows.Forms.RadioButton rbtnOption4;
         private System.Windows.Forms.RadioButton rbtnOption3;

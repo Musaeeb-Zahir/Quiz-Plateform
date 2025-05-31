@@ -1,0 +1,66 @@
+INSERT INTO STUDENTS (name, email, password) VALUES ('Ali Khan', 'ali@example.com', 'ali123');
+INSERT INTO STUDENTS (name, email, password) VALUES ('Sara Ahmed', 'sara@example.com', 'sara456');
+
+INSERT INTO QUIZZES (quiz_id, quiz_title, duration_minutes) VALUES (1, 'C# Basic', 10);
+INSERT INTO QUIZZES (quiz_id, quiz_title, duration_minutes) VALUES (2, 'Oracle Basic', 10);
+INSERT INTO QUIZZES (quiz_id, quiz_title, duration_minutes) VALUES (3, 'Web Development', 10);
+INSERT INTO QUIZZES (quiz_id, quiz_title, duration_minutes) VALUES (4, 'General Knowledge', 10);
+INSERT INTO QUIZZES (quiz_id, quiz_title, duration_minutes) VALUES (5, 'Programming Fundamentals', 10);
+
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (1, 1, 'What is the correct way to declare a variable in C#?', 'int x = 5;', 'int x := 5;', 'x = int 5;', 'declare int x = 5;', 'int x = 5;');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (2, 1, 'Which keyword is used to create a class in C#?', 'define', 'create', 'class', 'new', 'class');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (3, 1, 'Which method is the entry point in a C# application?', 'Main()', 'Start()', 'Run()', 'Init()', 'Main()');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (4, 1, 'Which of the following is a value type in C#?', 'int', 'string', 'object', 'dynamic', 'int');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (5, 1, 'What is the size of int in C#?', '2 bytes', '4 bytes', '8 bytes', 'Depends on system', '4 bytes');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (6, 1, 'Which keyword is used for inheritance in C#?', 'inherits', 'extends', ':', 'use', ':');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (7, 1, 'Which of these is NOT a C# access modifier?', 'public', 'private', 'protected', 'internalize', 'internalize');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (8, 1, 'What is boxing in C#?', 'Converting value type to object', 'Converting object to value type', 'Packing class', 'Using generics', 'Converting value type to object');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (9, 1, 'What does IDE stand for?', 'Integrated Development Environment', 'Internal Data Engine', 'Interactive Design Editor', 'Integration Debug Engine', 'Integrated Development Environment');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (10, 1, 'What does CLR stand for in .NET?', 'Common Language Runtime', 'Common Language Reference', 'Code Language Runtime', 'Central Logic Runtime', 'Common Language Runtime');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (11, 2, 'Which command is used to retrieve data from Oracle?', 'SELECT', 'GET', 'FETCH', 'RETRIEVE', 'SELECT');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (12, 2, 'What data type is used to store large text in Oracle?', 'VARCHAR', 'TEXT', 'VARCHAR2', 'STRING', 'VARCHAR2');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (13, 2, 'What does DML stand for?', 'Data Management Language', 'Data Markup Language', 'Data Manipulation Language', 'Database Meta Language', 'Data Manipulation Language');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (14, 2, 'Which symbol is used to end a SQL command in Oracle?', ';', '.', ':', '/', ';');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (15, 2, 'Which function returns the current date in Oracle?', 'NOW()', 'CURRENT_DATE', 'SYSDATE', 'GETDATE()', 'SYSDATE');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (16, 2, 'What is the default port for Oracle DB?', '1521', '1433', '3306', '8080', '1521');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (17, 2, 'Which keyword is used to remove a table in Oracle?', 'REMOVE', 'DELETE', 'DROP', 'CLEAR', 'DROP');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (18, 2, 'Which of these is NOT a valid Oracle constraint?', 'PRIMARY KEY', 'UNIQUE', 'FOREIGN KEY', 'RESTRICT', 'RESTRICT');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (19, 2, 'Which tool is commonly used to manage Oracle DB?', 'SQL*Plus', 'SSMS', 'Toad', 'Oracle Studio', 'SQL*Plus');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (20, 2, 'Which clause is used to filter rows in SELECT?', 'WHERE', 'FILTER', 'IF', 'HAVING', 'WHERE');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (21, 3, 'Which tag is used for the largest heading in HTML?', '<h1>', '<head>', '<heading>', '<title>', '<h1>');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (22, 3, 'CSS is used for:', 'Styling', 'Structure', 'Database', 'Logic', 'Styling');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (23, 3, 'Which HTTP method is used to retrieve data?', 'GET', 'POST', 'PUT', 'FETCH', 'GET');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (24, 3, 'Which language runs in the browser?', 'JavaScript', 'Python', 'PHP', 'Java', 'JavaScript');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (25, 3, 'HTML stands for?', 'HyperText Markup Language', 'HyperTool Markup Language', 'HighText Markup Language', 'HyperText Markdown Language', 'HyperText Markup Language');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (26, 3, 'Which tag is used to create a hyperlink?', '<a>', '<link>', '<href>', '<url>', '<a>');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (27, 3, 'JavaScript can change HTML content using?', 'DOM', 'SQL', 'CSS', 'XML', 'DOM');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (28, 3, 'Which property sets the background color in CSS?', 'background-color', 'color-bg', 'bgcolor', 'bg-color', 'background-color');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (29, 3, 'Bootstrap is a:', 'CSS Framework', 'JavaScript Library', 'Database', 'Web Server', 'CSS Framework');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (30, 3, 'Which file extension is used for JavaScript?', '.js', '.javascript', '.java', '.jv', '.js');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (31, 4, 'What is the capital of France?', 'Paris', 'Berlin', 'London', 'Madrid', 'Paris');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (32, 4, 'Which planet is known as the Red Planet?', 'Mars', 'Jupiter', 'Saturn', 'Venus', 'Mars');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (33, 4, 'How many continents are there?', '7', '5', '6', '8', '7');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (34, 4, 'Who wrote 'Hamlet'?', 'William Shakespeare', 'Charles Dickens', 'Leo Tolstoy', 'Mark Twain', 'William Shakespeare');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (35, 4, 'What is the largest ocean?', 'Pacific', 'Atlantic', 'Indian', 'Arctic', 'Pacific');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (36, 4, 'What gas do plants absorb?', 'Carbon Dioxide', 'Oxygen', 'Nitrogen', 'Hydrogen', 'Carbon Dioxide');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (37, 4, 'Which language has the most speakers?', 'Mandarin', 'English', 'Hindi', 'Spanish', 'Mandarin');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (38, 4, 'What is the boiling point of water?', '100°C', '90°C', '80°C', '110°C', '100°C');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (39, 4, 'Which animal is known as King of the Jungle?', 'Lion', 'Tiger', 'Elephant', 'Bear', 'Lion');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (40, 4, 'What is the smallest prime number?', '2', '1', '3', '0', '2');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (41, 5, 'Which of these is not a programming language?', 'HTML', 'Python', 'Java', 'C++', 'HTML');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (42, 5, 'What does CPU stand for?', 'Central Processing Unit', 'Core Processing Unit', 'Computer Program Unit', 'Central Program Utility', 'Central Processing Unit');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (43, 5, 'What is an algorithm?', 'Step-by-step instructions', 'Programming language', 'Hardware', 'Compiler', 'Step-by-step instructions');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (44, 5, 'Which symbol is used for comments in C++?', '//', '#', '/*', '<!--', '//');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (45, 5, 'What does IDE stand for?', 'Integrated Development Environment', 'Internal Debug Engine', 'Instant Data Editor', 'Integrated Design Element', 'Integrated Development Environment');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (46, 5, 'What is the output of 3 + 2 * 2?', '7', '10', '9', '8', '7');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (47, 5, 'Which data structure uses FIFO?', 'Queue', 'Stack', 'Tree', 'Graph', 'Queue');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (48, 5, 'Which language is primarily used for data analysis?', 'Python', 'HTML', 'CSS', 'PHP', 'Python');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (49, 5, 'Which logic gate returns true only if both inputs are true?', 'AND', 'OR', 'XOR', 'NOT', 'AND');
+INSERT INTO QUESTIONS (question_id, quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES (50, 5, 'Which of the following is a loop structure?', 'for', 'if', 'case', 'goto', 'for');
+
+INSERT INTO RESULTS (student_id, quiz_id, score, attempt_date)
+VALUES (1, 1, 2, SYSDATE);
+
+INSERT INTO RESULTS (student_id, quiz_id, score, attempt_date)
+VALUES (2, 2, 1, SYSDATE);
+

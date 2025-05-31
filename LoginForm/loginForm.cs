@@ -58,7 +58,7 @@ namespace Quiz_Plateform.LoginForm
                                 MessageBox.Show("Login successful!");
                                 // Open dashboard form here
                                 this.Hide();
-                                stuDashboard dashboard = new stuDashboard(); // create this form
+                                stuDashboard dashboard = new stuDashboard(email); 
                                 dashboard.Show();
                             }
                             else
@@ -74,7 +74,6 @@ namespace Quiz_Plateform.LoginForm
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("catch ma aya ha");
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }

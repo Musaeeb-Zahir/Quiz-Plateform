@@ -14,9 +14,10 @@ namespace Quiz_Plateform.StudentDashboard
 {
     public partial class stuDashboard : Form
     {
-        public stuDashboard()
+        String stuEmail;
+        public stuDashboard(String email)
         {
-            InitializeComponent();
+            InitializeComponent(); stuEmail = email.Trim();
         }
 
         private void btnStartQuiz_Click(object sender, EventArgs e)
@@ -29,7 +30,7 @@ namespace Quiz_Plateform.StudentDashboard
 
             string selectedCategory = cmbCategory.SelectedItem.ToString();
 
-            quizForm quizForm = new quizForm(selectedCategory); 
+            quizForm quizForm = new quizForm(selectedCategory,stuEmail); 
             this.Hide(); 
             quizForm.Show();
         }

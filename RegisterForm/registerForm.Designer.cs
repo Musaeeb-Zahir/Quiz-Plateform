@@ -32,13 +32,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtDepartment = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -79,24 +75,6 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Password:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(133, 197);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Department:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(133, 228);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "label6";
-            // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(231, 104);
@@ -118,34 +96,21 @@
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
             this.txtPassword.TabIndex = 8;
             // 
-            // txtDepartment
-            // 
-            this.txtDepartment.Location = new System.Drawing.Point(231, 197);
-            this.txtDepartment.Name = "txtDepartment";
-            this.txtDepartment.Size = new System.Drawing.Size(100, 20);
-            this.txtDepartment.TabIndex = 9;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(231, 228);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 10;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.Location = new System.Drawing.Point(231, 275);
+            this.button1.Location = new System.Drawing.Point(231, 232);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 31);
             this.button1.TabIndex = 11;
             this.button1.Text = "Register";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnBack.Location = new System.Drawing.Point(345, 275);
+            this.btnBack.Location = new System.Drawing.Point(343, 232);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(99, 31);
             this.btnBack.TabIndex = 12;
@@ -160,13 +125,9 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.txtDepartment);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -184,13 +145,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtDepartment;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnBack;
     }

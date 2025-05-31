@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 using System.Collections.Generic;
+using Quiz_Plateform.ResultForm;
 using static System.Formats.Asn1.AsnWriter;
 namespace Quiz_Plateform.Quizform
 {
     public partial class quizForm : Form
     {
         private string quizCategory;
+        String stuEmail;
         int QuestionCount = 1;
         int score = 0;
         int wrongAns = 0;
@@ -29,10 +31,11 @@ namespace Quiz_Plateform.Quizform
 
         private List<Question> questions = new List<Question>();
 
-        public quizForm(String category)
+        public quizForm(String category,String stuEmail)
         {
             InitializeComponent();
             quizCategory = category;
+            this.stuEmail=stuEmail;
         }
 
         //This method loads question
@@ -40,6 +43,7 @@ namespace Quiz_Plateform.Quizform
         {
             if (currentQuestionIndex < questions.Count)
             {
+                button2.Enabled = false;
                 var q = questions[currentQuestionIndex];
                 lblQuestion.Text = q.Text;
                 rbtnOption1.Text = q.Options[0];
@@ -49,9 +53,9 @@ namespace Quiz_Plateform.Quizform
             }
             else
             {
-                MessageBox.Show("Quiz completed! click result to check your result"+ "Score: "+score+" WrongAns: "+wrongAns);
-                this.Close();
-                // yahan per result form load kran ga
+                MessageBox.Show("Quiz completed! please submit for result");
+                btnNext.Enabled = false;
+                button2.Enabled = true; // Enable the submit button
             }
         }
 
@@ -128,6 +132,13 @@ namespace Quiz_Plateform.Quizform
             }
             currentQuestionIndex++;
             LoadQuestion();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Result resultForm = new Result(stuEmail, quizCategory,score,DateTime.Now);
+            resultForm.Show();
+            this.Hide();
         }
     }
 }

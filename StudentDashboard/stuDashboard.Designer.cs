@@ -32,9 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnStartQuiz = new System.Windows.Forms.Button();
+            this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,8 +58,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.btnStartQuiz);
+            this.groupBox1.Controls.Add(this.cmbCategory);
             this.groupBox1.Location = new System.Drawing.Point(211, 63);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(336, 217);
@@ -67,27 +67,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Available Quizes";
             // 
-            // comboBox1
+            // btnStartQuiz
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Computer Basic",
-            "Oracle SQL",
-            "General knowledge"});
-            this.comboBox1.Location = new System.Drawing.Point(99, 49);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.Text = "choice Quiz";
+            this.btnStartQuiz.Location = new System.Drawing.Point(99, 118);
+            this.btnStartQuiz.Name = "btnStartQuiz";
+            this.btnStartQuiz.Size = new System.Drawing.Size(75, 23);
+            this.btnStartQuiz.TabIndex = 1;
+            this.btnStartQuiz.Text = "Start Quiz";
+            this.btnStartQuiz.UseVisualStyleBackColor = true;
+            this.btnStartQuiz.Click += new System.EventHandler(this.btnStartQuiz_Click);
             // 
-            // button2
+            // cmbCategory
             // 
-            this.button2.Location = new System.Drawing.Point(99, 118);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Start Quiz";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cmbCategory.FormattingEnabled = true;
+            this.cmbCategory.Location = new System.Drawing.Point(99, 49);
+            this.cmbCategory.Name = "cmbCategory";
+            this.cmbCategory.Size = new System.Drawing.Size(121, 21);
+            this.cmbCategory.TabIndex = 0;
+            this.cmbCategory.Text = "choice Quiz";
             // 
             // stuDashboard
             // 
@@ -99,6 +96,7 @@
             this.Controls.Add(this.label1);
             this.Name = "stuDashboard";
             this.Text = "stuDashboard";
+            this.Load += new System.EventHandler(this.stuDashboard_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -111,7 +109,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cmbCategory;
+        private System.Windows.Forms.Button btnStartQuiz;
     }
 }

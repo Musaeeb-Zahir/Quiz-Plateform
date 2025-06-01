@@ -31,15 +31,14 @@ A Windows Forms-based quiz application developed using **C# (.NET Framework)** a
 ---
 
 ## 📁 Project Structure
-Quiz_Plateform/   
-├── Forms/     
+Quiz_Plateform/        
 │ ├── LoginForm.cs    
 │ ├── RegisterForm.cs   
 │ ├── Dashboard.cs    
 │ ├── quizForm.cs   
 │ ├── ResultForm.cs   
 │ └── PreviousResults.cs   
-├── DatabaseConfig.cs ← Global    connection string   
+| ├── DatabaseConfig.cs ← Global  | connection string   
 ├── Program.cs       
 ├── README.md   
 └── .sln   

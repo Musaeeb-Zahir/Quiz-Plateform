@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
+using Quiz_Plateform.StudentDashboard;
 using static System.Formats.Asn1.AsnWriter;
 
 namespace Quiz_Plateform.ResultForm
@@ -28,10 +29,7 @@ namespace Quiz_Plateform.ResultForm
             this.score = score;
             this.attemptDate = attemptDate;
             this.stuEmail = stuEmail;
-            lblName.Text = "Name: " + studentName;
-            lblQuizTitle.Text = "Quiz: " + quizTitle;
-            lblScore.Text = "Score: " + score.ToString();
-            lblDate.Text = "Attempted On: " + attemptDate.ToShortDateString();
+          
         }
 
         private void Result_Load(object sender, EventArgs e)
@@ -40,13 +38,15 @@ namespace Quiz_Plateform.ResultForm
             using (OracleConnection conn = new OracleConnection(connStr))
             {
                 conn.Open();
+                //Edr ma na student name retrive kya ha email ki madad sa
                 string query = "SELECT name FROM STUDENTS WHERE email = :semail";
                 using (OracleCommand cmd = new OracleCommand(query, conn))
                 {
                     cmd.Parameters.Add(new OracleParameter("semail", stuEmail)); // ya email bhi use kar sakte ho
                     studentName = cmd.ExecuteScalar()?.ToString();
+                    lblName.Text = studentName;
                 }
-
+                //edr ma na student id and quiz id retrive kya ha email and quiz title ki madad sa store krna ka lia
                 String query2 = @"
         SELECT s.student_id, q.quiz_id
         FROM STUDENTS s, QUIZZES q
@@ -63,11 +63,14 @@ namespace Quiz_Plateform.ResultForm
                         {
                             studentId = reader["student_id"].ToString();
                             quizId = reader["quiz_id"].ToString();
+                            lblQuizTitle.Text = quizTitle;
+                            lblScore.Text = score.ToString() + "/10";
+                            lblDate.Text = attemptDate.ToShortDateString();
                         }
                     }
                 }
 
-
+                //edr result table ma insert krna ka lia query likhi ha
                 string insertQuery = "INSERT INTO RESULTS (student_id, quiz_id, score, attempt_date) VALUES (:sid, :qid, :score, SYSDATE)";
                 using (OracleCommand cmd = new OracleCommand(insertQuery, conn))
                 {
@@ -76,7 +79,20 @@ namespace Quiz_Plateform.ResultForm
                     cmd.Parameters.Add(new OracleParameter("score", score));
                     cmd.ExecuteNonQuery();
                 }
+              
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            stuDashboard dashboard = new stuDashboard(stuEmail);
+            this.Hide();
+            dashboard.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

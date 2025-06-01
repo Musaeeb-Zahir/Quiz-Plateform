@@ -95,6 +95,12 @@
     <Compile Include="LoginForm\loginForm.Designer.cs">
       <DependentUpon>loginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PreResult\preResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreResult\preResultForm.Designer.cs">
+      <DependentUpon>preResultForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Quizform\quizForm.cs">
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm\loginForm.resx">
       <DependentUpon>loginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreResult\preResultForm.resx">
+      <DependentUpon>preResultForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

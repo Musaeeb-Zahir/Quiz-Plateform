@@ -15,6 +15,7 @@ namespace Quiz_Plateform.Quizform
 {
     public partial class quizForm : Form
     {
+        private int totalTimeInSeconds =120;
         private string quizCategory;
         String stuEmail;
         int QuestionCount = 1;
@@ -55,7 +56,7 @@ namespace Quiz_Plateform.Quizform
             {
                 MessageBox.Show("Quiz completed! please submit for result");
                 btnNext.Enabled = false;
-                button2.Enabled = true; // Enable the submit button
+                button2.Enabled = true;
             }
         }
 
@@ -100,6 +101,8 @@ namespace Quiz_Plateform.Quizform
                     }
 
                     LoadQuestion();
+                    quizTimer.Start();
+                   
                 }
                 catch (Exception ex)
                 {
@@ -139,6 +142,27 @@ namespace Quiz_Plateform.Quizform
             Result resultForm = new Result(stuEmail, quizCategory,score,DateTime.Now);
             resultForm.Show();
             this.Hide();
+        }
+
+        private void quizTimer_Tick(object sender, EventArgs e)
+        {
+            totalTimeInSeconds--;
+            if (totalTimeInSeconds <= 60)
+            {
+                lblTimer.ForeColor = Color.Red;
+            }
+            int minutes = totalTimeInSeconds / 60;
+            int seconds = totalTimeInSeconds % 60;
+
+            lblTimer.Text = $"{minutes:D2}:{seconds:D2}";
+
+            if (totalTimeInSeconds <= 0)
+            {
+                quizTimer.Stop();
+                MessageBox.Show("Time's up! Please Submit for result.");
+                btnNext.Enabled = false;
+                button2.Enabled = true;
+            }
         }
     }
 }

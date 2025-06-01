@@ -29,32 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnStartQuiz = new System.Windows.Forms.Button();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnPreResult = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblWelcome
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(346, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome Ali";
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Location = new System.Drawing.Point(346, 27);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(66, 13);
+            this.lblWelcome.TabIndex = 0;
+            this.lblWelcome.Text = "Welcome Ali";
             // 
-            // button1
+            // btnLogout
             // 
-            this.button1.Location = new System.Drawing.Point(504, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLogout.Location = new System.Drawing.Point(504, 22);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(71, 23);
+            this.btnLogout.TabIndex = 2;
+            this.btnLogout.Text = "LogOut";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // groupBox1
             // 
@@ -86,14 +88,25 @@
             this.cmbCategory.TabIndex = 0;
             this.cmbCategory.Text = "choice Quiz";
             // 
+            // btnPreResult
+            // 
+            this.btnPreResult.Location = new System.Drawing.Point(101, 295);
+            this.btnPreResult.Name = "btnPreResult";
+            this.btnPreResult.Size = new System.Drawing.Size(94, 23);
+            this.btnPreResult.TabIndex = 4;
+            this.btnPreResult.Text = "Previous Result";
+            this.btnPreResult.UseVisualStyleBackColor = true;
+            this.btnPreResult.Click += new System.EventHandler(this.btnPreResult_Click);
+            // 
             // stuDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPreResult);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.lblWelcome);
             this.Name = "stuDashboard";
             this.Text = "stuDashboard";
             this.Load += new System.EventHandler(this.stuDashboard_Load);
@@ -105,11 +118,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.Button btnStartQuiz;
+        private System.Windows.Forms.Button btnPreResult;
     }
 }

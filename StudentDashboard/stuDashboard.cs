@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
+using Quiz_Plateform.LoginForm;
+using Quiz_Plateform.PreResult;
 using Quiz_Plateform.Quizform;
 
 namespace Quiz_Plateform.StudentDashboard
@@ -15,6 +17,9 @@ namespace Quiz_Plateform.StudentDashboard
     public partial class stuDashboard : Form
     {
         String stuEmail;
+        String selectedCategory;
+        String user;
+
         public stuDashboard(String email)
         {
             InitializeComponent(); stuEmail = email.Trim();
@@ -28,7 +33,7 @@ namespace Quiz_Plateform.StudentDashboard
                 return;
             }
 
-            string selectedCategory = cmbCategory.SelectedItem.ToString();
+             selectedCategory = cmbCategory.SelectedItem.ToString();
 
             quizForm quizForm = new quizForm(selectedCategory,stuEmail); 
             this.Hide(); 
@@ -41,8 +46,16 @@ namespace Quiz_Plateform.StudentDashboard
             try
             {
                 using (OracleConnection conn = new OracleConnection(connectionString))
-                {
+                {   
                     conn.Open();
+                    //Find name by user email
+                    string query1 = "SELECT name FROM STUDENTS WHERE email = :email";
+                    using (OracleCommand cmd = new OracleCommand(query1, conn))
+                    {
+                        cmd.Parameters.Add(new OracleParameter("email", stuEmail));
+                        user = cmd.ExecuteScalar()?.ToString();
+                        lblWelcome.Text = "Welcome, " + user;
+                    }
                     String query = "select quiz_title from QUIZZES";
                     using (OracleCommand cmd = new OracleCommand(query, conn))
                     using (OracleDataReader reader = cmd.ExecuteReader())
@@ -58,6 +71,20 @@ namespace Quiz_Plateform.StudentDashboard
             {
                 MessageBox.Show("Error connecting to database: " + ex.Message);
             }
+        }
+
+        private void btnPreResult_Click(object sender, EventArgs e)
+        {
+            preResultForm resultForm = new preResultForm(stuEmail);
+            resultForm.Show();
+            this.Hide();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            loginForm loginForm = new loginForm();
+            loginForm.Show();
+            this.Close();
         }
     }
 }

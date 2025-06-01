@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblQuestion = new System.Windows.Forms.Label();
             this.rbtnOption4 = new System.Windows.Forms.RadioButton();
@@ -35,9 +36,10 @@
             this.rbtnOption2 = new System.Windows.Forms.RadioButton();
             this.rbtnOption1 = new System.Windows.Forms.RadioButton();
             this.lblQuestionNo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblTimer = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.quizTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,14 +118,14 @@
             this.lblQuestionNo.Size = new System.Drawing.Size(0, 13);
             this.lblQuestionNo.TabIndex = 0;
             // 
-            // label2
+            // lblTimer
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(500, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "timer 10min left";
+            this.lblTimer.AutoSize = true;
+            this.lblTimer.Location = new System.Drawing.Point(584, 72);
+            this.lblTimer.Name = "lblTimer";
+            this.lblTimer.Size = new System.Drawing.Size(33, 13);
+            this.lblTimer.TabIndex = 1;
+            this.lblTimer.Text = "Timer";
             // 
             // btnNext
             // 
@@ -145,6 +147,11 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // quizTimer
+            // 
+            this.quizTimer.Interval = 1000;
+            this.quizTimer.Tick += new System.EventHandler(this.quizTimer_Tick);
+            // 
             // quizForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,7 +161,7 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblQuestionNo);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblTimer);
             this.Name = "quizForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.quizForm_Load);
@@ -174,8 +181,9 @@
         private System.Windows.Forms.RadioButton rbtnOption3;
         private System.Windows.Forms.RadioButton rbtnOption2;
         private System.Windows.Forms.RadioButton rbtnOption1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Timer quizTimer;
     }
 }

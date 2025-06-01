@@ -38,6 +38,7 @@
             this.lblQuizTitle = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -78,21 +79,23 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(403, 357);
+            this.button1.Location = new System.Drawing.Point(403, 322);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
             this.button1.Text = "Retake Quiz";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(511, 357);
+            this.button2.Location = new System.Drawing.Point(505, 322);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 8;
             this.button2.Text = "Exit";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // lblName
             // 
@@ -130,11 +133,21 @@
             this.lblDate.TabIndex = 12;
             this.lblDate.Text = "label8";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(379, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Result";
+            // 
             // Result
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.lblQuizTitle);
@@ -165,5 +178,6 @@
         private System.Windows.Forms.Label lblQuizTitle;
         private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label label5;
     }
 }

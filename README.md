@@ -35,14 +35,14 @@ Quiz_Plateform/
 ├── Forms/     
 │ ├── LoginForm.cs    
 │ ├── RegisterForm.cs   
-│ ├── Dashboard.cs
-│ ├── quizForm.cs
-│ ├── ResultForm.cs
-│ └── PreviousResults.cs
-├── DatabaseConfig.cs ← Global connection string
-├── Program.cs
-├── README.md
-└── .sln
+│ ├── Dashboard.cs    
+│ ├── quizForm.cs   
+│ ├── ResultForm.cs   
+│ └── PreviousResults.cs   
+├── DatabaseConfig.cs ← Global    connection string   
+├── Program.cs       
+├── README.md   
+└── .sln   
 
 ---
 

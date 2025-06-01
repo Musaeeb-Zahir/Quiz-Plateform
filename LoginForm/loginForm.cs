@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Quiz_Plateform;
 using System.Windows.Forms;
 using Quiz_Plateform.StudentDashboard;
 using Oracle.ManagedDataAccess.Client;
@@ -40,10 +41,10 @@ namespace Quiz_Plateform.LoginForm
             }
             else
             {
-                String connectionString = "User Id=system;Password=db123;Data Source=localhost:1521/XE;";
+               
                 try
                 {
-                    using (OracleConnection conn = new OracleConnection(connectionString))
+                    using (OracleConnection conn = new OracleConnection(DatabaseConfig.ConnectionString))
                     {
                         conn.Open();
                         String query = "select count(*) from STUDENTS  where email=:email and password=:password";

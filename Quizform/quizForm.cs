@@ -70,8 +70,8 @@ namespace Quiz_Plateform.Quizform
         private void quizForm_Load(object sender, EventArgs e)
         {
             lblQuestionNo.Text = "Q" + QuestionCount.ToString() + " out of 10" ;
-            String connectionString = "User Id=system;Password=db123;Data Source=localhost:1521/XE;";
-            using (OracleConnection conn = new OracleConnection(connectionString))
+          
+            using (OracleConnection conn = new OracleConnection(DatabaseConfig.ConnectionString))
             {
                 try
                 {
@@ -120,7 +120,6 @@ namespace Quiz_Plateform.Quizform
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            LoadQuestion();
             QuestionCount++;
             lblQuestionNo.Text = "Q" + QuestionCount.ToString() + " out of 10";
             Question currentQuestion = questions[currentQuestionIndex];
@@ -140,6 +139,7 @@ namespace Quiz_Plateform.Quizform
                 wrongAns++; 
             }
             currentQuestionIndex++;
+            LoadQuestion();
            
         }
 

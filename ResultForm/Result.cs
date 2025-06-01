@@ -34,8 +34,8 @@ namespace Quiz_Plateform.ResultForm
 
         private void Result_Load(object sender, EventArgs e)
         {
-            string connStr = "User Id=system;Password=db123;Data Source=localhost:1521/XE;";
-            using (OracleConnection conn = new OracleConnection(connStr))
+           
+            using (OracleConnection conn = new OracleConnection(DatabaseConfig.ConnectionString))
             {
                 conn.Open();
                 //Edr ma na student name retrive kya ha email ki madad sa

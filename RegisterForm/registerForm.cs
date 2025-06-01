@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Quiz_Plateform;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 
@@ -37,9 +38,9 @@ namespace Quiz_Plateform.RegisterForm
                 return;
             }
 
-            string connString = "User Id=system;Password=db123;Data Source=localhost:1521/XE;";
+     
 
-            using (OracleConnection conn = new OracleConnection(connString))
+            using (OracleConnection conn = new OracleConnection(DatabaseConfig.ConnectionString))
             {
                 try
                 {

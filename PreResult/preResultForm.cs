@@ -23,8 +23,8 @@ namespace Quiz_Plateform.PreResult
 
         private void preResultForm_Load(object sender, EventArgs e)
         {
-            string connectionString = "User Id=system;Password=db123;Data Source=localhost:1521/XE;";
-            using (OracleConnection conn = new OracleConnection(connectionString))
+           
+            using (OracleConnection conn = new OracleConnection(DatabaseConfig.ConnectionString))
             {
                 conn.Open();
                 // Step 1: Get student_id from email

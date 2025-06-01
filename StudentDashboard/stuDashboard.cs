@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 using Quiz_Plateform.LoginForm;
+using Quiz_Plateform;
 using Quiz_Plateform.PreResult;
 using Quiz_Plateform.Quizform;
 
@@ -42,10 +43,10 @@ namespace Quiz_Plateform.StudentDashboard
 
         private void stuDashboard_Load(object sender, EventArgs e)
         {
-            String connectionString = "User Id=system;Password=db123;Data Source=localhost:1521/XE;";
+        
             try
             {
-                using (OracleConnection conn = new OracleConnection(connectionString))
+                using (OracleConnection conn = new OracleConnection(DatabaseConfig.ConnectionString))
                 {   
                     conn.Open();
                     //Find name by user email

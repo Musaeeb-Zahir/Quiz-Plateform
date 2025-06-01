@@ -31,10 +31,10 @@ A Windows Forms-based quiz application developed using **C# (.NET Framework)** a
 ---
 
 ## 📁 Project Structure
-Quiz_Plateform/
-├── Forms/
-│ ├── LoginForm.cs
-│ ├── RegisterForm.cs
+Quiz_Plateform/   
+├── Forms/     
+│ ├── LoginForm.cs    
+│ ├── RegisterForm.cs   
 │ ├── Dashboard.cs
 │ ├── quizForm.cs
 │ ├── ResultForm.cs
@@ -102,8 +102,7 @@ Quiz_Plateform/
 
 **Name:** [Musaeeb Zahir]  
 **Department:** BS Computer Science  
-**Tools:** C#, Oracle XE, Visual Studio  
-**Year:** Final Year Project – 2025
+**Tools:** C#, Oracle XE, Visual Studio
 
 ---
 

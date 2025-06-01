@@ -76,6 +76,7 @@
             this.rbtnOption4.TabStop = true;
             this.rbtnOption4.Text = "radioButton4";
             this.rbtnOption4.UseVisualStyleBackColor = true;
+            this.rbtnOption4.CheckedChanged += new System.EventHandler(this.rbtnOption4_CheckedChanged);
             // 
             // rbtnOption3
             // 
@@ -87,6 +88,7 @@
             this.rbtnOption3.TabStop = true;
             this.rbtnOption3.Text = "radioButton3";
             this.rbtnOption3.UseVisualStyleBackColor = true;
+            this.rbtnOption3.CheckedChanged += new System.EventHandler(this.rbtnOption3_CheckedChanged);
             // 
             // rbtnOption2
             // 
@@ -98,6 +100,7 @@
             this.rbtnOption2.TabStop = true;
             this.rbtnOption2.Text = "radioButton2";
             this.rbtnOption2.UseVisualStyleBackColor = true;
+            this.rbtnOption2.CheckedChanged += new System.EventHandler(this.rbtnOption2_CheckedChanged);
             // 
             // rbtnOption1
             // 
@@ -109,6 +112,7 @@
             this.rbtnOption1.TabStop = true;
             this.rbtnOption1.Text = "radioButton1";
             this.rbtnOption1.UseVisualStyleBackColor = true;
+            this.rbtnOption1.CheckedChanged += new System.EventHandler(this.rbtnOption1_CheckedChanged);
             // 
             // lblQuestionNo
             // 

@@ -15,7 +15,7 @@ namespace Quiz_Plateform.Quizform
 {
     public partial class quizForm : Form
     {
-        private int totalTimeInSeconds =120;
+        private int totalTimeInSeconds =600;
         private string quizCategory;
         String stuEmail;
         int QuestionCount = 1;
@@ -44,13 +44,19 @@ namespace Quiz_Plateform.Quizform
         {
             if (currentQuestionIndex < questions.Count)
             {
-                button2.Enabled = false;
                 var q = questions[currentQuestionIndex];
                 lblQuestion.Text = q.Text;
+
                 rbtnOption1.Text = q.Options[0];
                 rbtnOption2.Text = q.Options[1];
                 rbtnOption3.Text = q.Options[2];
                 rbtnOption4.Text = q.Options[3];
+                button2.Enabled = false;
+                rbtnOption1.Checked = false;
+                rbtnOption2.Checked = false;
+                rbtnOption3.Checked = false;
+                rbtnOption4.Checked = false;
+                btnNext.Enabled = false;
             }
             else
             {
@@ -114,18 +120,18 @@ namespace Quiz_Plateform.Quizform
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            LoadQuestion();
             QuestionCount++;
             lblQuestionNo.Text = "Q" + QuestionCount.ToString() + " out of 10";
             Question currentQuestion = questions[currentQuestionIndex];
             String selectedOption = "";
+            
             if (rbtnOption1.Checked) selectedOption = rbtnOption1.Text;
             else if (rbtnOption2.Checked) selectedOption = rbtnOption2.Text;
             else if (rbtnOption3.Checked) selectedOption = rbtnOption3.Text;
             else if (rbtnOption4.Checked) selectedOption = rbtnOption4.Text;
-            Console.WriteLine("Selected option: " + selectedOption);
-            Console.WriteLine("Correct answer: " + currentQuestion.CorrectAnswer);
-
-            if (selectedOption == currentQuestion.CorrectAnswer)
+           
+                if (selectedOption == currentQuestion.CorrectAnswer)
             {
                 score++; 
             }
@@ -134,7 +140,7 @@ namespace Quiz_Plateform.Quizform
                 wrongAns++; 
             }
             currentQuestionIndex++;
-            LoadQuestion();
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -163,6 +169,26 @@ namespace Quiz_Plateform.Quizform
                 btnNext.Enabled = false;
                 button2.Enabled = true;
             }
+        }
+
+        private void rbtnOption1_CheckedChanged(object sender, EventArgs e)
+        {
+            btnNext.Enabled = true;
+        }
+
+        private void rbtnOption2_CheckedChanged(object sender, EventArgs e)
+        {
+            btnNext.Enabled = true;
+        }
+
+        private void rbtnOption3_CheckedChanged(object sender, EventArgs e)
+        {
+            btnNext.Enabled = true;
+        }
+
+        private void rbtnOption4_CheckedChanged(object sender, EventArgs e)
+        {
+             btnNext.Enabled = true;
         }
     }
 }

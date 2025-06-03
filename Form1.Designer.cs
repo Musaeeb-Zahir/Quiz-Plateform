@@ -35,12 +35,12 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(329, 87);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(3)));
+            this.label1.Location = new System.Drawing.Point(294, 76);
             this.label1.Margin = new System.Windows.Forms.Padding(3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 17);
+            this.label1.Padding = new System.Windows.Forms.Padding(5);
+            this.label1.Size = new System.Drawing.Size(198, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quiz Plateform";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -48,6 +48,7 @@
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.btnLogin.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnLogin.Location = new System.Drawing.Point(222, 188);
             this.btnLogin.Name = "btnLogin";
@@ -60,6 +61,7 @@
             // btnRegister
             // 
             this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.btnRegister.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.btnRegister.Location = new System.Drawing.Point(455, 188);
             this.btnRegister.Name = "btnRegister";
@@ -73,7 +75,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogin);
@@ -82,7 +84,6 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

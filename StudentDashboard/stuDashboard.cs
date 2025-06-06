@@ -87,5 +87,34 @@ namespace Quiz_Plateform.StudentDashboard
             loginForm.Show();
             this.Close();
         }
+
+        private void btnDeleteAccount_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to delete your account?", "Confirm", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                using (OracleConnection conn = new OracleConnection(DatabaseConfig.ConnectionString))
+                {
+                    conn.Open();
+                    string deleteQuery = "DELETE FROM STUDENTS WHERE email = :email";
+
+                    using (OracleCommand cmd = new OracleCommand(deleteQuery, conn))
+                    {
+                        cmd.Parameters.Add(new OracleParameter("email", stuEmail)); 
+                        int rows = cmd.ExecuteNonQuery();
+                        if (rows > 0)
+                        {
+                            MessageBox.Show("Account deleted.");
+                            Application.Exit();  
+                        }
+                        else
+                        {
+                            MessageBox.Show("Delete failed.");
+                        }
+                    }
+                }
+            }
+        }
     }
 }

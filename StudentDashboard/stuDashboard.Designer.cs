@@ -36,15 +36,22 @@
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnPreResult = new System.Windows.Forms.Button();
+            this.btnEditAccount = new System.Windows.Forms.Button();
+            this.btnDeleteAccount = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Location = new System.Drawing.Point(346, 27);
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.White;
+            this.lblWelcome.Location = new System.Drawing.Point(11, 166);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(66, 13);
+            this.lblWelcome.Padding = new System.Windows.Forms.Padding(23);
+            this.lblWelcome.Size = new System.Drawing.Size(174, 70);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Welcome Ali";
             // 
@@ -62,7 +69,7 @@
             // 
             this.groupBox1.Controls.Add(this.btnStartQuiz);
             this.groupBox1.Controls.Add(this.cmbCategory);
-            this.groupBox1.Location = new System.Drawing.Point(211, 63);
+            this.groupBox1.Location = new System.Drawing.Point(279, 96);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(336, 217);
             this.groupBox1.TabIndex = 3;
@@ -90,7 +97,7 @@
             // 
             // btnPreResult
             // 
-            this.btnPreResult.Location = new System.Drawing.Point(101, 295);
+            this.btnPreResult.Location = new System.Drawing.Point(11, 319);
             this.btnPreResult.Name = "btnPreResult";
             this.btnPreResult.Size = new System.Drawing.Size(94, 23);
             this.btnPreResult.TabIndex = 4;
@@ -98,21 +105,53 @@
             this.btnPreResult.UseVisualStyleBackColor = true;
             this.btnPreResult.Click += new System.EventHandler(this.btnPreResult_Click);
             // 
+            // btnEditAccount
+            // 
+            this.btnEditAccount.Location = new System.Drawing.Point(11, 348);
+            this.btnEditAccount.Name = "btnEditAccount";
+            this.btnEditAccount.Size = new System.Drawing.Size(111, 23);
+            this.btnEditAccount.TabIndex = 5;
+            this.btnEditAccount.Text = "Edit your Profile";
+            this.btnEditAccount.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteAccount
+            // 
+            this.btnDeleteAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDeleteAccount.Location = new System.Drawing.Point(11, 377);
+            this.btnDeleteAccount.Name = "btnDeleteAccount";
+            this.btnDeleteAccount.Size = new System.Drawing.Size(111, 23);
+            this.btnDeleteAccount.TabIndex = 6;
+            this.btnDeleteAccount.Text = "Delete Account";
+            this.btnDeleteAccount.UseVisualStyleBackColor = false;
+            this.btnDeleteAccount.Click += new System.EventHandler(this.btnDeleteAccount_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.btnPreResult);
+            this.panel1.Controls.Add(this.btnDeleteAccount);
+            this.panel1.Controls.Add(this.btnEditAccount);
+            this.panel1.Controls.Add(this.lblWelcome);
+            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(204, 448);
+            this.panel1.TabIndex = 7;
+            // 
             // stuDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnPreResult);
+            this.ClientSize = new System.Drawing.Size(772, 448);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.lblWelcome);
             this.Name = "stuDashboard";
             this.Text = "stuDashboard";
             this.Load += new System.EventHandler(this.stuDashboard_Load);
             this.groupBox1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -125,5 +164,8 @@
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.Button btnStartQuiz;
         private System.Windows.Forms.Button btnPreResult;
+        private System.Windows.Forms.Button btnEditAccount;
+        private System.Windows.Forms.Button btnDeleteAccount;
+        private System.Windows.Forms.Panel panel1;
     }
 }

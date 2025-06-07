@@ -47,13 +47,14 @@ END;
 -- ===== CREATE QUESTIONS TABLE =====
 CREATE TABLE QUESTIONS (
     question_id NUMBER PRIMARY KEY,
-    quiz_id NUMBER REFERENCES QUIZZES(quiz_id),
+    quiz_id NUMBER,
     question_text VARCHAR2(500),
     option_a VARCHAR2(200),
     option_b VARCHAR2(200),
     option_c VARCHAR2(200),
     option_d VARCHAR2(200),
-    correct_option VARCHAR2(200)
+    correct_option VARCHAR2(200),
+    CONSTRAINT fk_question_quiz FOREIGN KEY (quiz_id) REFERENCES QUIZZES(quiz_id) ON DELETE CASCADE
 );
 CREATE SEQUENCE question_seq START WITH 1 INCREMENT BY 1;
 CREATE OR REPLACE TRIGGER trg_question_id
@@ -67,10 +68,12 @@ END;
 -- ===== CREATE RESULTS TABLE =====
 CREATE TABLE RESULTS (
     result_id NUMBER PRIMARY KEY,
-    student_id NUMBER REFERENCES STUDENTS(student_id),
-    quiz_id NUMBER REFERENCES QUIZZES(quiz_id),
+    student_id NUMBER,
+    quiz_id NUMBER,
     score NUMBER,
-    attempt_date DATE
+    attempt_date DATE,
+    CONSTRAINT fk_result_student FOREIGN KEY (student_id) REFERENCES STUDENTS(student_id) ON DELETE CASCADE,
+    CONSTRAINT fk_result_quiz FOREIGN KEY (quiz_id) REFERENCES QUIZZES(quiz_id) ON DELETE CASCADE
 );
 CREATE SEQUENCE result_seq START WITH 1 INCREMENT BY 1;
 CREATE OR REPLACE TRIGGER trg_result_id

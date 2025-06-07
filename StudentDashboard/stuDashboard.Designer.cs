@@ -128,7 +128,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.btnPreResult);
             this.panel1.Controls.Add(this.btnDeleteAccount);
             this.panel1.Controls.Add(this.btnEditAccount);

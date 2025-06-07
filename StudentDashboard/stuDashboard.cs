@@ -107,7 +107,9 @@ namespace Quiz_Plateform.StudentDashboard
                         if (rows > 0)
                         {
                             MessageBox.Show("Account deleted.");
-                            Application.Exit();  
+                            loginForm loginForm = new loginForm();
+                            loginForm.Show();
+                            this.Close(); 
                         }
                         else
                         {

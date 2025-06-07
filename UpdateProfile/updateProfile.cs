@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 using Quiz_Plateform.LoginForm;
+using Quiz_Plateform.StudentDashboard;
 
 namespace Quiz_Plateform.UpdateProfile
 {
@@ -74,6 +75,18 @@ namespace Quiz_Plateform.UpdateProfile
         private void txtName_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cancel_Click(object sender, EventArgs e)
+        {
+            stuDashboard dashboard = new stuDashboard(oldEmail);
+            dashboard.Show();
+            this.Close();
+        }
+
+        private void updateProfile_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

@@ -34,7 +34,7 @@ namespace Quiz_Plateform.ResultForm
 
         private void Result_Load(object sender, EventArgs e)
         {
-           
+            this.WindowState = FormWindowState.Maximized;
             using (OracleConnection conn = new OracleConnection(DatabaseConfig.ConnectionString))
             {
                 conn.Open();

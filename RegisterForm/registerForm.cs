@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Quiz_Plateform;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
+using Quiz_Plateform.LoginForm;
 
 namespace Quiz_Plateform.RegisterForm
 {
@@ -21,8 +22,12 @@ namespace Quiz_Plateform.RegisterForm
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
+            loginForm loginForm = new loginForm();
+            loginForm.WindowState = this.WindowState;
+            loginForm.StartPosition = FormStartPosition.Manual;
+            loginForm.Size = this.Size;
+            loginForm.Location = this.Location;
+            loginForm.Show();
             this.Hide();
         }
 
@@ -60,6 +65,10 @@ namespace Quiz_Plateform.RegisterForm
                             MessageBox.Show("Registration successful!");
                             this.Hide();
                             Form1 form1 = new Form1();
+                            form1.WindowState = this.WindowState;
+                            form1.StartPosition = FormStartPosition.Manual;
+                            form1.Size = this.Size;
+                            form1.Location = this.Location;
                             form1.Show();
                         }
                         else
@@ -85,6 +94,11 @@ namespace Quiz_Plateform.RegisterForm
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void registerForm_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
     

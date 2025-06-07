@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Quiz_Plateform.LoginForm;
 using Quiz_Plateform.RegisterForm;
+using static System.Net.Mime.MediaTypeNames;
 
 
 namespace Quiz_Plateform
@@ -28,6 +29,10 @@ namespace Quiz_Plateform
         private void btnLogin_Click(object sender, EventArgs e)
         {
             loginForm loginForm=new loginForm();
+            loginForm.WindowState = this.WindowState;
+            loginForm.StartPosition = FormStartPosition.Manual;
+            loginForm.Size = this.Size;
+            loginForm.Location = this.Location;
             loginForm.Show();
             this.Hide();
 
@@ -38,6 +43,11 @@ namespace Quiz_Plateform
             registerForm register= new registerForm();
             register.Show();
             this.Hide();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

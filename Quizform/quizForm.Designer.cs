@@ -45,14 +45,18 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.lblQuestion);
             this.groupBox1.Controls.Add(this.rbtnOption4);
             this.groupBox1.Controls.Add(this.rbtnOption3);
             this.groupBox1.Controls.Add(this.rbtnOption2);
             this.groupBox1.Controls.Add(this.rbtnOption1);
-            this.groupBox1.Location = new System.Drawing.Point(196, 126);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.groupBox1.Location = new System.Drawing.Point(71, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(421, 209);
+            this.groupBox1.Size = new System.Drawing.Size(639, 325);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Question";
@@ -60,9 +64,10 @@
             // lblQuestion
             // 
             this.lblQuestion.AutoSize = true;
+            this.lblQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold);
             this.lblQuestion.Location = new System.Drawing.Point(6, 52);
             this.lblQuestion.Name = "lblQuestion";
-            this.lblQuestion.Size = new System.Drawing.Size(73, 13);
+            this.lblQuestion.Size = new System.Drawing.Size(112, 17);
             this.lblQuestion.TabIndex = 6;
             this.lblQuestion.Text = "SQL full form?";
             // 
@@ -71,7 +76,7 @@
             this.rbtnOption4.AutoSize = true;
             this.rbtnOption4.Location = new System.Drawing.Point(9, 189);
             this.rbtnOption4.Name = "rbtnOption4";
-            this.rbtnOption4.Size = new System.Drawing.Size(85, 17);
+            this.rbtnOption4.Size = new System.Drawing.Size(107, 21);
             this.rbtnOption4.TabIndex = 5;
             this.rbtnOption4.TabStop = true;
             this.rbtnOption4.Text = "radioButton4";
@@ -83,7 +88,7 @@
             this.rbtnOption3.AutoSize = true;
             this.rbtnOption3.Location = new System.Drawing.Point(9, 155);
             this.rbtnOption3.Name = "rbtnOption3";
-            this.rbtnOption3.Size = new System.Drawing.Size(85, 17);
+            this.rbtnOption3.Size = new System.Drawing.Size(107, 21);
             this.rbtnOption3.TabIndex = 4;
             this.rbtnOption3.TabStop = true;
             this.rbtnOption3.Text = "radioButton3";
@@ -95,7 +100,7 @@
             this.rbtnOption2.AutoSize = true;
             this.rbtnOption2.Location = new System.Drawing.Point(9, 119);
             this.rbtnOption2.Name = "rbtnOption2";
-            this.rbtnOption2.Size = new System.Drawing.Size(85, 17);
+            this.rbtnOption2.Size = new System.Drawing.Size(107, 21);
             this.rbtnOption2.TabIndex = 3;
             this.rbtnOption2.TabStop = true;
             this.rbtnOption2.Text = "radioButton2";
@@ -105,9 +110,10 @@
             // rbtnOption1
             // 
             this.rbtnOption1.AutoSize = true;
+            this.rbtnOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.rbtnOption1.Location = new System.Drawing.Point(9, 83);
             this.rbtnOption1.Name = "rbtnOption1";
-            this.rbtnOption1.Size = new System.Drawing.Size(85, 17);
+            this.rbtnOption1.Size = new System.Drawing.Size(107, 21);
             this.rbtnOption1.TabIndex = 2;
             this.rbtnOption1.TabStop = true;
             this.rbtnOption1.Text = "radioButton1";
@@ -133,22 +139,28 @@
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(461, 342);
+            this.btnNext.BackColor = System.Drawing.Color.Lime;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnNext.Location = new System.Drawing.Point(554, 371);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
             this.btnNext.TabIndex = 1;
             this.btnNext.Text = "Next";
-            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(542, 342);
+            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Location = new System.Drawing.Point(635, 371);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
             this.button2.Text = "Submit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // quizTimer
@@ -160,6 +172,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(240)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnNext);

@@ -10,6 +10,7 @@ using Quiz_Plateform;
 using System.Windows.Forms;
 using Quiz_Plateform.StudentDashboard;
 using Oracle.ManagedDataAccess.Client;
+using Quiz_Plateform.RegisterForm;
 namespace Quiz_Plateform.LoginForm
 {
     public partial class loginForm : Form
@@ -21,13 +22,17 @@ namespace Quiz_Plateform.LoginForm
 
         private void loginForm_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
+            registerForm register = new registerForm();
+            register.WindowState = this.WindowState;
+            register.StartPosition = FormStartPosition.Manual;
+            register.Size = this.Size;
+            register.Location = this.Location;
+            register.Show();
             this.Hide();
         }
 
@@ -58,9 +63,13 @@ namespace Quiz_Plateform.LoginForm
                             {
                                 MessageBox.Show("Login successful!");
                                 // Open dashboard form here
-                                this.Hide();
-                                stuDashboard dashboard = new stuDashboard(email); 
+                                stuDashboard dashboard = new stuDashboard(email);
+                                dashboard.WindowState = this.WindowState;
+                                dashboard.StartPosition = FormStartPosition.Manual;
+                                dashboard.Size = this.Size;
+                                dashboard.Location = this.Location;
                                 dashboard.Show();
+                                this.Hide();
                             }
                             else
                             {

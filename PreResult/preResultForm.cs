@@ -23,7 +23,7 @@ namespace Quiz_Plateform.PreResult
 
         private void preResultForm_Load(object sender, EventArgs e)
         {
-           
+            this.WindowState = FormWindowState.Maximized;
             using (OracleConnection conn = new OracleConnection(DatabaseConfig.ConnectionString))
             {
                 conn.Open();
@@ -70,6 +70,11 @@ namespace Quiz_Plateform.PreResult
             stuDashboard dashboard = new stuDashboard(studentEmail);
             dashboard.Show();
             this.Hide();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
     }

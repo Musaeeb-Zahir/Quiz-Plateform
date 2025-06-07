@@ -45,6 +45,7 @@
             // 
             // lblWelcome
             // 
+            this.lblWelcome.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.Color.White;
@@ -57,9 +58,11 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(504, 22);
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLogout.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLogout.Location = new System.Drawing.Point(11, 413);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(71, 23);
+            this.btnLogout.Size = new System.Drawing.Size(54, 23);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "LogOut";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -69,16 +72,19 @@
             // 
             this.groupBox1.Controls.Add(this.btnStartQuiz);
             this.groupBox1.Controls.Add(this.cmbCategory);
-            this.groupBox1.Location = new System.Drawing.Point(279, 96);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.groupBox1.Location = new System.Drawing.Point(230, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(336, 217);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(30, 3, 3, 3);
+            this.groupBox1.Size = new System.Drawing.Size(542, 448);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Available Quizes";
             // 
             // btnStartQuiz
             // 
-            this.btnStartQuiz.Location = new System.Drawing.Point(99, 118);
+            this.btnStartQuiz.Location = new System.Drawing.Point(186, 236);
             this.btnStartQuiz.Name = "btnStartQuiz";
             this.btnStartQuiz.Size = new System.Drawing.Size(75, 23);
             this.btnStartQuiz.TabIndex = 1;
@@ -88,10 +94,11 @@
             // 
             // cmbCategory
             // 
+            this.cmbCategory.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(99, 49);
+            this.cmbCategory.Location = new System.Drawing.Point(61, 194);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(121, 21);
+            this.cmbCategory.Size = new System.Drawing.Size(388, 25);
             this.cmbCategory.TabIndex = 0;
             this.cmbCategory.Text = "choice Quiz";
             // 
@@ -118,6 +125,9 @@
             // btnDeleteAccount
             // 
             this.btnDeleteAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnDeleteAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnDeleteAccount.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDeleteAccount.ForeColor = System.Drawing.Color.Cornsilk;
             this.btnDeleteAccount.Location = new System.Drawing.Point(11, 377);
             this.btnDeleteAccount.Name = "btnDeleteAccount";
             this.btnDeleteAccount.Size = new System.Drawing.Size(111, 23);
@@ -128,24 +138,27 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.AutoSize = true;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
             this.panel1.Controls.Add(this.btnPreResult);
             this.panel1.Controls.Add(this.btnDeleteAccount);
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnEditAccount);
             this.panel1.Controls.Add(this.lblWelcome);
-            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(204, 448);
+            this.panel1.Size = new System.Drawing.Size(188, 448);
             this.panel1.TabIndex = 7;
             // 
             // stuDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(240)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(772, 448);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnLogout);
             this.Name = "stuDashboard";
             this.Text = "stuDashboard";
             this.Load += new System.EventHandler(this.stuDashboard_Load);
@@ -153,6 +166,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

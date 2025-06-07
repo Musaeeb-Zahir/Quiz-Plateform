@@ -113,6 +113,7 @@
             this.btnEditAccount.TabIndex = 5;
             this.btnEditAccount.Text = "Edit your Profile";
             this.btnEditAccount.UseVisualStyleBackColor = true;
+            this.btnEditAccount.Click += new System.EventHandler(this.btnEditAccount_Click);
             // 
             // btnDeleteAccount
             // 

@@ -12,6 +12,7 @@ using Quiz_Plateform.LoginForm;
 using Quiz_Plateform;
 using Quiz_Plateform.PreResult;
 using Quiz_Plateform.Quizform;
+using Quiz_Plateform.UpdateProfile;
 
 namespace Quiz_Plateform.StudentDashboard
 {
@@ -115,6 +116,13 @@ namespace Quiz_Plateform.StudentDashboard
                     }
                 }
             }
+        }
+
+        private void btnEditAccount_Click(object sender, EventArgs e)
+        {
+            updateProfile updateProfileForm = new updateProfile(stuEmail);
+            updateProfileForm.Show();
+            this.Hide(); 
         }
     }
 }

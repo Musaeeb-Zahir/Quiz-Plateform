@@ -86,7 +86,7 @@ namespace Quiz_Plateform.UpdateProfile
 
         private void updateProfile_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            
         }
     }
 }

@@ -54,9 +54,9 @@
             this.groupBox1.Controls.Add(this.rbtnOption2);
             this.groupBox1.Controls.Add(this.rbtnOption1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.groupBox1.Location = new System.Drawing.Point(71, 40);
+            this.groupBox1.Location = new System.Drawing.Point(71, 99);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(639, 325);
+            this.groupBox1.Size = new System.Drawing.Size(639, 279);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Question";
@@ -131,7 +131,7 @@
             // lblTimer
             // 
             this.lblTimer.AutoSize = true;
-            this.lblTimer.Location = new System.Drawing.Point(584, 72);
+            this.lblTimer.Location = new System.Drawing.Point(586, 55);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(33, 13);
             this.lblTimer.TabIndex = 1;
@@ -142,7 +142,7 @@
             this.btnNext.BackColor = System.Drawing.Color.Lime;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNext.Location = new System.Drawing.Point(554, 371);
+            this.btnNext.Location = new System.Drawing.Point(544, 384);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
             this.btnNext.TabIndex = 1;
@@ -155,7 +155,7 @@
             this.button2.BackColor = System.Drawing.SystemColors.Highlight;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(635, 371);
+            this.button2.Location = new System.Drawing.Point(635, 384);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;

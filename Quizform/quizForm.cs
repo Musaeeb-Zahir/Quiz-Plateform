@@ -69,7 +69,6 @@ namespace Quiz_Plateform.Quizform
 
         private void quizForm_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
             lblQuestionNo.Text = "Q" + QuestionCount.ToString() + " out of 10" ;
           
             using (OracleConnection conn = new OracleConnection(DatabaseConfig.ConnectionString))

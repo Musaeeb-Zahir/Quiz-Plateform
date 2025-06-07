@@ -23,7 +23,6 @@ namespace Quiz_Plateform.PreResult
 
         private void preResultForm_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
             using (OracleConnection conn = new OracleConnection(DatabaseConfig.ConnectionString))
             {
                 conn.Open();

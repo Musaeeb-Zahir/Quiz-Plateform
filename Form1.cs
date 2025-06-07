@@ -29,10 +29,6 @@ namespace Quiz_Plateform
         private void btnLogin_Click(object sender, EventArgs e)
         {
             loginForm loginForm=new loginForm();
-            loginForm.WindowState = this.WindowState;
-            loginForm.StartPosition = FormStartPosition.Manual;
-            loginForm.Size = this.Size;
-            loginForm.Location = this.Location;
             loginForm.Show();
             this.Hide();
 
@@ -47,7 +43,7 @@ namespace Quiz_Plateform
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            
         }
     }
 }

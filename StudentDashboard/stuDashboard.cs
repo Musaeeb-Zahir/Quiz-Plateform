@@ -44,7 +44,6 @@ namespace Quiz_Plateform.StudentDashboard
 
         private void stuDashboard_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
             try
             {
                 using (OracleConnection conn = new OracleConnection(DatabaseConfig.ConnectionString))
